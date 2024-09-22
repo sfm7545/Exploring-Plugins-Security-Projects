@@ -51,7 +51,7 @@ IDA uses a plugin for its decompiler, named Hex-Rays.
 1. Open a binary file with IDA.
 2. Under the *Jump* tab, select *Jump to pseudocode*.
 
-![Press 'Jump to pseudocode'](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/IDA2redbox.PNG "Press 'Jump to pseudocode'")
+![Press 'Jump to pseudocode'](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/IDA2redbox.PNG "Press 'Jump to pseudocode'.")
 
 3. IDA will prompt and let you know that you will be using its cloud plugin decompiler.
 4. Accept this, and the pseudocode C will be generated.
@@ -72,12 +72,26 @@ GPThidra is a script for Ghidra which integrates ChatGPT functionality. With GPT
  1. Copy the the python file data from [GPTHidra's Github.](https://github.com/evyatar9/GptHidra)
  2. Open any project in Ghidra.
  3. Open the "Window" tab and select *Script Manager*
+
+![Select Script Manager](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/gptGhidra1.PNG "Script Manager is towards the bottom.")
+
  4. This will open Ghidra's Script Manager. Select the *New Script* button.
+
+![Ghidra's Script Manager](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/gptghidra2.PNG "Ghidra's Script Manager.")
+
  5. Select *Python* as the language for the script.
  6. Paste the python file data into the new script and rename it GptHydra.py
  7. Make an OpenAI API key and past it into the API_KEY variable.
+
+![Python file pasted.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/gptghidra5.PNG "Python file pasted.")
+
+*Note: the API key shown in this screenshot will not work.*
+
  8. Save this file.
  9. Now, when a binary file is open, select any function. Press Ctrl + Alt + G and GPTHidra will run. 
+
+![GPTHidra in action.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/gptghidra7.PNG "GPTHidra in action.")
+
  10. It may fail if your OpenAI key is out of uses.
 
 ## Ghidra and IDA Pro Comparisons
@@ -89,3 +103,8 @@ IDA Pro has a fast decompiler with rather clear pseudocode, but is not a free pr
 
 ## References
 
+* ["Getting Started With Ghidra For Malware Analysis"](https://www.youtube.com/watch?v=dW8YFRX2BGk&t=148s)
+
+* ["Reverse Engineering Tutorial with IDA Pro – An Introduction to IDA Pro."](https://www.youtube.com/watch?v=N_3AGB9Vf9E)
+
+* ["Awesome IDA, Ghidra, x64DBG, GDB & OllyDBG plugins"](https://github.com/fr0gger/awesome-ida-x64-olly-plugin/blob/master/README.md#IDA-Plugins)
