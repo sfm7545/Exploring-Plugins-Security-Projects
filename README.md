@@ -32,7 +32,7 @@ The goal of this project is to demonstrate the functionality of Ghidra and IDA P
 4. From here, you can search through each individual function.
 5. You can also view imports/exports and the hex version of the code.
 ### Part 1: Plugins
-## Decompilers 
+## Experiment 1: Decompilers 
 Both Ghidra and IDA Pro have popular decompilers, which are used to convert assembly into readable C pseudocode. This makes it much easier to analyze the code of a malicious binary. 
 ### Ghidra's Decompiler 
 -------
