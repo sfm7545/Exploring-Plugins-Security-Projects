@@ -22,12 +22,13 @@ The goal of this project is to demonstrate the functionality of Ghidra and IDA P
 * Functions
 * Data Types
 
-![Pseudocode generated in Ghidra.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/ghidracodesample.PNG "Pseudocode generated in Ghidra.")
-
 ## Using IDA Pro
 1. Open IDA.
 2. Open a file you wish to analyze. 
 3. IDA will then display the assembly code for the binary.
+
+![IDA displaying assembly of a file.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/IDA1.PNG "IDA displaying assembly of a file.")
+
 4. From here, you can search through each individual function.
 5. You can also view imports/exports and the hex version of the code.
 ### Part 1: Plugins
@@ -40,13 +41,23 @@ Ghidra's decompiler is built in.
 2. Find dissasembled code of interest.
 3. Double click function call, and Ghidra will automatically decompile it.
 4. From there, you can analyze the C pseudocode. 
+
+![Pseudocode generated in Ghidra.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/ghidracodesample.PNG "Pseudocode generated in Ghidra.")
+
+
 ### IDA's Decompiler
 ------
 IDA uses a plugin for its decompiler, named Hex-Rays. 
 1. Open a binary file with IDA.
 2. Under the *Jump* tab, select *Jump to pseudocode*.
+
+![Press "Jump to pseudocode"](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/IDA2redbox.PNG "Press "Jump to pseudocode"")
+
 3. IDA will prompt and let you know that you will be using its cloud plugin decompiler.
 4. Accept this, and the pseudocode C will be generated.
+
+![Pseudocode generated in IDA.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/IDA3.PNG "Pseudocode generated in IDA.")
+
 
 IDA's decompiler plugin is quick and easy to use, and generates a succinct, readable C pseudocode. 
 
