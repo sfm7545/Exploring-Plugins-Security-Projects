@@ -51,7 +51,7 @@ IDA uses a plugin for its decompiler, named Hex-Rays.
 1. Open a binary file with IDA.
 2. Under the *Jump* tab, select *Jump to pseudocode*.
 
-![Press "Jump to pseudocode"](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/IDA2redbox.PNG "Press "Jump to pseudocode"")
+![Press 'Jump to pseudocode'](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/IDA2redbox.PNG "Press 'Jump to pseudocode'")
 
 3. IDA will prompt and let you know that you will be using its cloud plugin decompiler.
 4. Accept this, and the pseudocode C will be generated.
