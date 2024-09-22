@@ -11,6 +11,9 @@ The goal of this project is to demonstrate the functionality of Ghidra and IDA P
 
 4. In order to analyze a binary, you must add the binary to the project. The easiest way to accomplish this is by dragging and dropping the file into the workspace.
 5. Ghidra will then generate a summary of the file, showing information including the last modified date, the compiler, and more.
+
+![Ghidra generates a summary of the file.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/ghidrae2.PNG "Ghidra generates a summary of the file.")
+
 6. From here, select the code browser tool. You can select what you wish to analyze with the Analysis Options popup. 
 7. The file will then be analyzed and the dashboard will launch. The dashboard initially shows the file in assembly. There are many items you can filter for, including:
 * Strings
@@ -18,6 +21,9 @@ The goal of this project is to demonstrate the functionality of Ghidra and IDA P
 * Imports and exports
 * Functions
 * Data Types
+
+![Pseudocode generated in Ghidra.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/ghidracodesample.PNG "Pseudocode generated in Ghidra.")
+
 ## Using IDA Pro
 1. Open IDA.
 2. Open a file you wish to analyze. 
