@@ -118,9 +118,7 @@ IDA Pro has a fast decompiler with rather clear pseudocode, but is not a free pr
 
 * ["Awesome IDA, Ghidra, x64DBG, GDB & OllyDBG plugins"](https://github.com/fr0gger/awesome-ida-x64-olly-plugin/blob/master/README.md#IDA-Plugins)
 
-
-# Ghidra: Exploring Plugins for Reverse Engineering
-## Part 2
+# Part 2
 In this part, we focused on plugins for Ghidra from a research perspective.
 We wished to discover plugins that help make malware analysis simpler, and potentially automate it.
 
