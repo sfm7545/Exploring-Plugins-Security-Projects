@@ -2,6 +2,15 @@
 Ghidra and IDA Pro are reverse engineering tools which allow a malware analyst to view the assembly code of a binary.
 Both programs have support for scripting and plugins, which help make malware analysis easier. 
 The goal of this project is to demonstrate the functionality of Ghidra and IDA Pro, as well as the use of plugins and scripting.
+
+## Sections:
+1) Part 1
+2) Part 2
+
+
+---
+
+
 ## Using Ghidra
 1. Ghidra must be installed, preferrably on a VM.
 2. Open Ghidra.
@@ -32,7 +41,7 @@ The goal of this project is to demonstrate the functionality of Ghidra and IDA P
 4. From here, you can search through each individual function.
 5. You can also view imports/exports and the hex version of the code.
 ### Part 1: Plugins
-## Experiment 1: Decompilers 
+## Decompilers 
 Both Ghidra and IDA Pro have popular decompilers, which are used to convert assembly into readable C pseudocode. This makes it much easier to analyze the code of a malicious binary. 
 ### Ghidra's Decompiler 
 -------
@@ -108,3 +117,99 @@ IDA Pro has a fast decompiler with rather clear pseudocode, but is not a free pr
 * ["Reverse Engineering Tutorial with IDA Pro – An Introduction to IDA Pro."](https://www.youtube.com/watch?v=N_3AGB9Vf9E)
 
 * ["Awesome IDA, Ghidra, x64DBG, GDB & OllyDBG plugins"](https://github.com/fr0gger/awesome-ida-x64-olly-plugin/blob/master/README.md#IDA-Plugins)
+
+
+# Ghidra: Exploring Plugins for Reverse Engineering
+## Part 2
+In this part, we focused on plugins for Ghidra from a research perspective.
+We wished to discover plugins that help make malware analysis simpler, and potentially automate it.
+
+A focus of this project is the use of AI, in which machine learning or large language models could be leveraged to make reverse engineering easier. 
+
+---
+#### Ghidra's Python Interpreter
+This technique allows for the automation of function mapping, which could quickly gather details like
+1) function names
+2) address
+3) sizes
+
+which help reduce the workload during analysis.
+With the use of AI models, patterns in the code, as well as obfuscation can be detected.
+
+
+![Ghidra Python Interpreter](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/pythoninterpreter.png "Python Interpreter")
+
+
+---
+#### machinelearning
+Machinelearning is a plugin developed by Ghidra that can be installed from the toolbox menu.
+
+This plugin allows for the training of large language models natively in Ghidra.
+
+As opposed to training off of thousands of samples, machinelearning allows you to train a small language model using the file you are currently working on.
+
+![Installing machinelearning](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/installingML.PNG "Installing machinelearning")
+
+
+---
+#### IDA Pro's Debugger
+The debugger built into IDA Pro allows for realtime monitoring of malware.
+
+While it is built as a debugger, a user can run a program instruction by instruction and determine functionality, including memory changes and other interactions that may not be seen through just static viewing of the code. 
+
+![IDA Pro Debugger](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/idadebugger.png "IDA Pro Debugger")
+
+---
+#### Call Graph
+Ghidra's function call graph creates a visual of function relationships. It can help find openings in the code, or obfuscated/complicated sections.
+
+![Function Call Graph](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/callgraph.png "Function Call Graph")
+
+---
+
+## Experiment: GPTHidra Revisited
+* Tools used: Ghidra, GPTHidra script.
+
+
+Previously, we discussed GPTHidra and how to install it. However, to prove how it works and that it is an effective tool for automation, we conducted an experiment using a crackme file.
+
+The crackme file is a relatively simple program, which requests a password to activate it. The password, however, is unknown. 
+
+
+![crackme file when run](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/crackmepasswordrequest.PNG "crackme file when run")
+
+
+If GPTHidra can determine a valid password for this file, then we can continue our analysis much faster.
+
+To achieve this, we must:
+
+1) Open the crackme file in Ghidra and analyze it.
+2) Find the main function. Check the exports.
+3) There is a function there named __mainCRTStartup. This function is used on startup.
+4) This function calls another function, which we double click and find the actual main function inside. 
+
+![Finding main.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/findingmain.PNG "Finding main.")
+
+5) We can double click _main and find the main function.
+6) From here, we call the GPTHidra script to tell us what we are looking at.
+
+![GPTHidra's Analysis.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/ghidraGPTusing1.PNG "GPTHidra's Analysis")
+
+7) The output of ChatGPT appears in the console.
+8) It tells us that this function asks for a user input and calls another function to check that user input.
+9) We can now check this function.
+10) Call the GPTHidra script in the check function. 
+
+![GPTHidra's Analysis.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/ghptGPTsing.PNG "GPTHidra's Analysis.")
+
+11) GPTHidra is able to determine the function being performed to get the correct password.
+12) It determined that a password just needs to add up to 15 to be considered valid, and recommends the password "555".
+13) Let's try 555 as a password for the crackme file.
+
+![555 is a valid password.](https://github.com/sfm7545/Exploring-Plugins-Security-Projects/blob/main/screenshots/crackmepasswordOK.PNG "555 is a valid password.")
+
+GPTHidra is an excellent example of how artificial intelligence can enhance the reverse engineering experience.
+
+
+
+
